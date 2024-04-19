@@ -1,0 +1,10 @@
+- name: Create Jenkins Jobs
+  hosts: localhost
+  roles:
+    - jenkins
+  vars:
+    mjobs:
+      - { job_name: "expense-backend", repo_name: "https://github.com/umamanasa/expense-backend" }
+
+    sjobs:
+      - { job_name: "expense-terraform", repo_name: "https://github.com/umamanasa/expense-terraform" }
