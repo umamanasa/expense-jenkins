@@ -8,6 +8,7 @@
       - { folder_name: "Infra-jobs" }
     mjobs:
       - { job_name: "expense-backend", repo_name: "https://github.com/umamanasa/expense-backend", folder_name: "CI-Pipelines" }
+      - { job_name: "expense-frontend", repo_name: "https://github.com/umamanasa/expense-frontend", folder_name: "CI-Pipelines" }
 
     sjobs:
       - { job_name: "expense-terraform", repo_name: "https://github.com/umamanasa/expense-terraform", folder_name: "Infra-jobs" }
