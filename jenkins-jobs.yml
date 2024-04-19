@@ -3,8 +3,11 @@
   roles:
     - jenkins
   vars:
+    folders:
+      - { folder_name: "CI-Pipelines" }
+      - { folder_name: "Infra-jobs" }
     mjobs:
-      - { job_name: "expense-backend", repo_name: "https://github.com/umamanasa/expense-backend" }
+      - { job_name: "expense-backend", repo_name: "https://github.com/umamanasa/expense-backend", folder_name: "CI-Pipelines" }
 
     sjobs:
-      - { job_name: "expense-terraform", repo_name: "https://github.com/umamanasa/expense-terraform" }
+      - { job_name: "expense-terraform", repo_name: "https://github.com/umamanasa/expense-terraform", folder_name: "Infra-jobs" }
