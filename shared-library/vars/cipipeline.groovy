@@ -26,7 +26,7 @@ def call() {
       } else {
         common.compile()
         common.test()
-        common.codeQuality
+        common.codeQuality()
       }
     }
   }
