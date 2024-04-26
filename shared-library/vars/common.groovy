@@ -1,13 +1,13 @@
 def compile() {
-//  if (env.codeType == "static") {
-//    return "Don't need any Compilation"
-//  }
-//
+  if (env.codeType == "static") {
+    return "Don't need any Compilation"
+  }
+
   stage('Compile Code') {
-//    if(env.codeType == "nodejs"){
-//      sh 'npm install'
-//    }
-    print 'OK'
+    if(env.codeType == "nodejs"){
+      sh 'npm install'
+    }
+//    print 'OK'
   }
 }
 
