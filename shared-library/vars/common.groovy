@@ -13,10 +13,10 @@ def compile() {
 
 def test() {
   stage('Test Cases') {
-//    if(env.codeType == "nodejs"){
- //     sh 'npm test'
-      print 'OK'
-//    }
+    if(env.codeType == "nodejs"){
+      sh 'npm test'
+  //    print 'OK'
+    }
   }
 }
 
