@@ -40,19 +40,19 @@ def codeSecurity() {
 
 def release() {
   stage('Release') {
-//    env.nexususer = sh (script: 'aws ssm get-parameter --name "nexus.username" --with-decryption --query="Parameter.Value" |xargs', returnStdout: true).trim()
-//    env.nexuspass = sh (script: 'aws ssm get-parameter --name "nexus.password" --with-decryption --query="Parameter.Value" |xargs', returnStdout: true).trim()
-//    wrap([$class: "MaskPasswordsBuildWrapper", varPasswordPairs: [[password: nexuspass]]]) {
-//      sh 'echo ${TAG_NAME} >VERSION'
-//      if(env.codeType == "nodejs") {
-//        sh 'zip -r ${component}-${TAG_NAME}.zip index.js node_modules VERSION ${schemadir}'
-//      } else {
-//        sh 'zip -r ${component}-${TAG_NAME}.zip *'
-//      }
-//
-//      sh 'curl -v -u ${nexususer}:${nexuspass} --upload-file ${component}-${TAG_NAME}.zip http://172.31.81.233:8081/repository/${component}/${component}-${TAG_NAME}.zip'
-//
-//    }
-    print 'OK'
+    env.nexususer = sh (script: 'aws ssm get-parameter --name "nexus.username" --with-decryption --query="Parameter.Value" |xargs', returnStdout: true).trim()
+    env.nexuspass = sh (script: 'aws ssm get-parameter --name "nexus.password" --with-decryption --query="Parameter.Value" |xargs', returnStdout: true).trim()
+    wrap([$class: "MaskPasswordsBuildWrapper", varPasswordPairs: [[password: nexuspass]]]) {
+      sh 'echo ${TAG_NAME} >VERSION'
+      if(env.codeType == "nodejs") {
+        sh 'zip -r ${component}-${TAG_NAME}.zip index.js node_modules VERSION ${schemadir}'
+      } else {
+        sh 'zip -r ${component}-${TAG_NAME}.zip *'
+      }
+
+      sh 'curl -v -u ${nexususer}:${nexuspass} --upload-file ${component}-${TAG_NAME}.zip http://172.31.81.233:8081/repository/${component}/${component}-${TAG_NAME}.zip'
+
+    }
+//    print 'OK'
   }
 }
