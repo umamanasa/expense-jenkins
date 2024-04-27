@@ -5,10 +5,12 @@
   vars:
     folders:
       - { folder_name: "CI-Pipelines" }
-      - { folder_name: "Infra-jobs" }
+      - { folder_name: "Infra-Jobs" }
+      - { folder_name: "Deployment-Jobs"}
     mjobs:
       - { job_name: "backend", repo_name: "https://github.com/umamanasa/backend", folder_name: "CI-Pipelines" }
       - { job_name: "frontend", repo_name: "https://github.com/umamanasa/frontend", folder_name: "CI-Pipelines" }
 
     sjobs:
-      - { job_name: "expense-terraform", repo_name: "https://github.com/umamanasa/expense-terraform", folder_name: "Infra-jobs" }
+      - { job_name: "expense-terraform", repo_name: "https://github.com/umamanasa/expense-terraform", folder_name: "Infra-Jobs" }
+      - { job_name: "App-Deployment", repo_name: "https://github.com/umamanasa/expense-ansible", folder_name: "Deployment-Jobs" }
