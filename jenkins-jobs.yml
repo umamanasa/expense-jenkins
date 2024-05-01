@@ -14,3 +14,4 @@
     sjobs:
       - { job_name: "expense-terraform", repo_name: "https://github.com/umamanasa/expense-terraform", folder_name: "Infra-Jobs" }
       - { job_name: "App-Deployment", repo_name: "https://github.com/umamanasa/expense-ansible", folder_name: "Deployment-Jobs" }
+      - { job_name: "Helm-Deployment", repo_name: "https://github.com/umamanasa/expense-helm", folder_name: "Deployment-Jobs" }
